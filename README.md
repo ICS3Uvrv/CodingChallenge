@@ -1,5 +1,5 @@
 # CodingChallenge
-ideas:<br>
+<h3>ideas:</h3><br>
 <ul>
 <li>Langton's Ant
 <li>Julia's Set
