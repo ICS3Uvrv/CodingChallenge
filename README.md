@@ -1,6 +1,8 @@
 # CodingChallenge
-ideas:
-Langton's Ant
-Julia's Set
-Phyllotaxis
-Mathematical Rose Patterns
+ideas:<br>
+<ul>
+<li>Langton's Ant
+<li>Julia's Set
+<li>Phyllotaxis
+<li>Mathematical Rose Patterns
+</ul>
