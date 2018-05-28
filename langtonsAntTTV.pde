@@ -49,8 +49,12 @@ void draw() {
     grid[x][y] = 0;
     moveForward();
   }
+  loadPixels();
   for (int i = 0; i < width; i++) {
     for (int j = 0; j < height; j++) {
+      int pix = i * width + j;
+      pixels[pix] = color(random(255));
     }
   }
+  updatePixels();
 }
