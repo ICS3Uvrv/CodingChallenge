@@ -3,9 +3,6 @@ int x;
 int y;
 int dir;
 int colourChange = 0;
-float a = 0.0;
-float b = 0.0;
-float c = 0.0;
 float colA;
 float colB;
 float colC;
@@ -24,19 +21,10 @@ void settings() {
 void setup() {
   background(255);
   grid = new int[width][height];
-  x = 200;
-  y = 200;
+  x = 00;
+  y = 00;
   dir = antUp;
-  colA = a;
-  colB = b;
-  colC = c;
-  colourChange++;
-  if (colourChange > 100) {
-    a = random(255);
-    b = random(255);
-    c = random(255);
-    colourChange = 0;
-  }
+ 
 }
 //ant movement
 void turnR() {
@@ -54,6 +42,7 @@ void turnL() {
 }
 
 void moveForward() {
+
   if (dir == antUp) {
     y--;
   } else if (dir == antRight) {
@@ -63,23 +52,31 @@ void moveForward() {
   } else if (dir == antLeft) {
     x--;
   }
-  //greater than width
-  if (x > width) {
-    x = 0;
-  } else if (x < 0) {
-    x = width-1;
+    //colour block
+  loadPixels();
+  for (int i = 0; i < width; i++) {
+    for (int j = 0; j < height; j++) {
+      int pix = i * width + j;
+      if (grid[i][j] == 0) {
+        pixels[pix] = color(255);
+      } if else
+      
+      else {
+        pixels[pix] = color(colA, colB, colC);
+      }
+    }
   }
-  //greater than height
-  if (y > height) {
-    y = 0;
-  } else if (y < 0) {
-    y = height-1;
-  }
+  updatePixels();
 }
-
 void draw() {
+   colourChange++;
+  if (colourChange > 500) {
+    colA = random(255);
+    colB = random(255);
+    colC = random(255);
+    colourChange = 0;
+  }
   int antLocation = grid[x][y];
-
   if (antLocation == 0) {
     turnR();
     grid[x][y] = 1;
@@ -89,17 +86,18 @@ void draw() {
     grid[x][y] = 0;
     moveForward();
   }
-  //colour block
-  loadPixels();
-  for (int i = 0; i < width; i++) {
-    for (int j = 0; j < height; j++) {
-      int pix = i * width + j;
-      if (grid[i][j] == 0) {
-        pixels[pix] = color(255);
-      } else {
-        pixels[pix] = color(colA, colB, colC);
-      }
-    }
+      //greater than width
+  if (x > width-1) {
+    x = 0;
+  } else if (x < 0) {
+    x = width-1;
   }
-  updatePixels();
+  //greater than height
+  if (y > height-1) {
+    y = 0;
+  } else if (y < 0) {
+    y = height-1;
+  }
+
+
 }
