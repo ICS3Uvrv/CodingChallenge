@@ -1,3 +1,4 @@
+class ant{
 int[][] grid;
 int x;
 int y;
@@ -11,6 +12,7 @@ int antUp = 0;
 int antRight = 1;
 int antDown = 2;
 int antLeft = 3;
+}
 
 PImage ant;
 
@@ -21,8 +23,8 @@ void settings() {
 void setup() {
   background(255);
   grid = new int[width][height];
-  x = 00;
-  y = 00;
+  x = 200;
+  y = 200;
   dir = antUp;
  
 }
@@ -59,9 +61,7 @@ void moveForward() {
       int pix = i * width + j;
       if (grid[i][j] == 0) {
         pixels[pix] = color(255);
-      } if else
-      
-      else {
+      } else {
         pixels[pix] = color(colA, colB, colC);
       }
     }
