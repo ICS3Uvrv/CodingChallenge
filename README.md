@@ -1,3 +1,3 @@
 # CodingChallenge
 
-<h1><strong> Langton's Ant </strong></h1>
+<h2><strong> Langton's Ant </strong></h2>
