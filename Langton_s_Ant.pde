@@ -17,29 +17,30 @@ void setup() {
   size(800, 800);
 
   grid = new int[width][height];
-  ant = createImage(width,height,RGB);
+  ant = createImage(width, height, RGB);
   ant.loadPixels();
-  for (int i = 0; i < ant.pixels.length; i++);{
+  for (int i = 0; i < ant.pixels.length; i++);
+  {
     ant.pixels[i] = color(255);
   }
   ant.updatePixels();
   //The ants location
-  x = 200; 
-  y = 200;
-  dir = Antup;
+  x = width/2; 
+  y = height/2;
+  dir = Antleft; //direction of the line
 }
 
 void turnLeft() {
   dir--;
   if (dir < Antup) {
-    dir = Antleft;
+    dir = Antup;
   }
 }
 
 void turnRight() {
   dir++;
   if (dir > Antleft) {
-    dir = Antup;
+    dir = Antup; //gave more flower lines going up
   }
 }
 
@@ -53,7 +54,7 @@ void moveForward() {
   } else if (dir == Antleft) {
     x--;
   }
-  
+
   //edges
   if (x>width-1) {
     x = 0;
@@ -73,7 +74,7 @@ void draw() {
 
 
 
-  for (int n = 0; n < 100; n++) { //speed
+  for (int n = 0; n < 1000; n++) { //speed
     //State of the current spot where the ant is
     int state = grid[x][y];
     if (state == 0) {
@@ -83,31 +84,15 @@ void draw() {
       turnLeft();
       grid[x][y] = 0;
     }
-        
-    color col = color(220); //color
+
+    color col = color(255); //color
     if (grid[x][y] == 0) {
-      col = color(135,206,235);
+      col = color(135, 206, 235);
     }
-    colorMode(RGB, col);
-    noStroke();
-    noFill();
-    ant.set(x,y,col);
+    ant.set(x, y, col);
     moveForward();
   }
 
-    image(ant,0,0);
-//    loadPixels();
-//    for (int a = 0; a < width; a++) {
-//      for (int b = 0; b < height; b++) {
-//        int pix = a + width * b;
-//        if (grid[a][b] == 0) {
-//          pixels[pix] = color(255);
-//        } else {
-//          pixels [pix] = color(0);
-//        }
-//      }
-//    }
-//    updatePixels();
-//  }
-//}
+  image(ant, 0, 0);
+
 }
