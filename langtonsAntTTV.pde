@@ -1,22 +1,13 @@
-  int colourChange = 0;
-  float colA;
-  float colB;
-  float colC;
-ant a1 = new ant();
-
-PImage ant;
-
 void settings() {
   size(400, 400);
 }
+Ant ant;
 
 void setup() {
   background(255);
-  ant = createImage(width, height, RGB);
-  ant.loadPixels();
+  ant = new Ant((int)200, (int)200);
 }
 
 void draw() {
-  a1.update();
-  updatePixels();
+  ant.run();
 }
