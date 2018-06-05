@@ -5,7 +5,9 @@ Ant ant;
 
 void setup() {
   background(255);
-  ant = new Ant((int)200, (int)200);
+  float antx = random(400);
+  float anty = random(400);
+  ant = new Ant(int(antx), int(anty));
 }
 
 void draw() {
