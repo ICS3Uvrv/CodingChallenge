@@ -1,4 +1,5 @@
 class Ant {
+
   int[][] grid;
   int x;
   int y;
@@ -11,11 +12,13 @@ class Ant {
   float colA;
   float colB;
   float colC;
-  public Ant(int posx, int posy) {
-    x = posx;
-    y = posy;
+
+  public Ant(int antx, int anty) {
+    x = antx;
+    y = anty;
   }
   void run() {
+
     if (colourChange > 100) {
       colA = random(254);
       colB = random(254);
@@ -23,44 +26,66 @@ class Ant {
       colourChange = 0;
     }
     color col = get(x, y);
-    if (col == color(255)) {
-      dir--;
-      if (dir < antUp) {
-        dir = antLeft;
-      }
-    
-    stroke(colA, colB, colC);
-    point(x, y);
-  } else {
-  dir++;
-  if (dir > antLeft) {
-    dir = antUp;
-  }
-  stroke(255);
-  point(x, y);
-}
-if (dir == antUp) {
-  y--;
-} else if (dir == antRight) {
-  x++;
-} else if (dir == antDown) {
-  y++;
-} else if (dir == antLeft) {
-  x--;
-}
+    if (col == color(255, 255, 255)) {
+      ant.decideC();
+      stroke(colA, colB, colC);
+      point(x, y);
+    } else {
+      ant.decideW();
+      stroke(255);
+      point(x, y);
+    }
 
-//out of bounds
-if (x > width-1) {
-  x = 0;
-} else if (x < 0) {
-  x = width-1;
-}
-if (y > height-1) {
-  y = 0;
-} else if (y < 0) {
-  y = height-1;
-}
-//count of colour changing
-colourChange++;
-}
+    //out of bounds
+    if (x > width-1) {
+      x = 0;
+    } else if (x < 0) {
+      x = width-1;
+    }
+    if (y > height-1) {
+      y = 0;
+    } else if (y < 0) {
+      y = height-1;
+    }
+    //count of colour changing
+    colourChange++;
+
+    if (dir == antUp) {
+      y--;
+    } else if (dir == antRight) {
+      x++;
+    } else if (dir == antDown) {
+      y++;
+    } else if (dir == antLeft) {
+      x--;
+    }
+  }
+
+
+  void decideW() {
+    float q = random(100.0);
+    if (q > 1) {
+      dir--;
+    } else if (q < 1) {
+      dir++;
+    }
+    if (dir > antLeft) {
+      dir = antUp;
+    } else if (dir < antUp) {
+      dir = antLeft;
+    }
+  }
+  void decideC() {
+    float q = random(100.0);
+    if (q < 1) {
+      dir--;
+    } else if (q > 1) {
+      dir++;
+    }
+    if (dir > antLeft) {
+      dir = antUp;
+    } else if (dir < antUp) {
+      dir = antLeft;
+    }
+  }
 }
