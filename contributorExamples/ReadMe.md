@@ -1,1 +1,1 @@
-Explanation on how to contrubute: 
+Explanation on how to contribute: 
