@@ -9,7 +9,7 @@
 -Version 3 (Vasiliki)<br>
 -References
 
-<h2>[Wiki Page](https://github.com/ICS3Uvrv/CodingChallenge/wiki)</h2>
+## [Wiki Page](https://github.com/ICS3Uvrv/CodingChallenge/wiki)
 
 
  
