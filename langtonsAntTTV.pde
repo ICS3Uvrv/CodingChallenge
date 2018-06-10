@@ -1,32 +1,30 @@
+Ant ant, ant1, ant2, ant3, ant4;
 float dir;
 float[] direct = new float[4];
 int colourChange = 0;
-float antx = random(400);
-float anty = random(400);
-float colA;
-float colB;
-float colC;
-
+int c = int(random(251, 255));
+boolean pause;
 class Ant {
   int[][] grid;
-  int x;
-  int y;
+  int x, y;
+  float colA = random(1, 254);
+  float colB = random(1, 254);
+  float colC = random(1, 254);
 
-  public Ant(int antx, int anty) {
-    x = antx;
-    y = anty;
+  Ant(int xTemp, int yTemp) {
+    x = xTemp;
+    y = yTemp;
   }
 
   void run() {
-
     color col = get(x, y);
-    if (col == color(255, 255, 255)) {
-      ant.decideC();
+    if (col == color(250,250,c)) {
+      decideC();
       stroke(colA, colB, colC);
       point(x, y);
     } else {
-      ant.decideW();
-      stroke(255);
+      decideW();
+      stroke(250,250,c);
       point(x, y);
     }
 
@@ -56,9 +54,9 @@ class Ant {
 
   void decideW() {
     float q = random(100.0);
-    if (q > 10) {
+    if (q > 1) {
       dir--;
-    } else if (q < 10) {
+    } else if (q < 1) {
       dir++;
     }
     if (int(dir) > direct[3]) {
@@ -69,9 +67,9 @@ class Ant {
   }
   void decideC() {
     float q = random(100.0);
-    if (q < 10) {
+    if (q < 1) {
       dir--;
-    } else if (q > 10) {
+    } else if (q > 1) {
       dir++;
     }
     if (int(dir) > direct[3]) {
@@ -81,34 +79,36 @@ class Ant {
     }
   }
 }
-Ant ant;
-Ant ant1;
-Ant ant2;
+
 void setup() {
   ant = new Ant(int(random(width)), int(random(height)));
   ant1 = new Ant(int(random(width)), int(random(height)));
   ant2 = new Ant(int(random(width)), int(random(height)));
+  ant3 = new Ant(int(random(width)), int(random(height)));
+  ant4 = new Ant(int(random(width)), int(random(height)));
   size(400, 400);
   direct[0] = 0;
   direct[1] = 1;
   direct[2] = 2;
   direct[3] = 3;
   dir = direct[int(random(3))];
-  background(255);
+  background(250,250,c);
 }
 
 void draw() {
-  for (int s = 0; s < 10; s++) {
+  if (pause == false) {
+
     ant.run();
     ant1.run();
     ant2.run();
+    ant3.run();
+    ant4.run();
   }
-  //count of colour changing
-  colourChange++;
-  if (colourChange > 100) {
-    colA = random(254);
-    colB = random(254);
-    colC = random(254);
-    colourChange = 0;
+}
+void mouseClicked() {
+  if (pause == false) {
+    pause = true;
+  } else {
+    pause = false;
   }
 }
