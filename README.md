@@ -9,7 +9,7 @@
 -Version 3 (Vasiliki)<br>
 -References
 
-## [Wiki Page](https://github.com/ICS3Uvrv/CodingChallenge/wiki)
+## [Wiki](https://github.com/ICS3Uvrv/CodingChallenge/wiki)
 
  <CENTER> <img src="https://www.elegantthemes.com/blog/wp-content/uploads/2017/07/programming-languages-to-learn-for-wordpress-featured-image.png" width="800"><hr> </CENTER> 
     
