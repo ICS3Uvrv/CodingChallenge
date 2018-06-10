@@ -1,15 +1,15 @@
 <h2>Click the on the 'wiki' link to access our wiki page. There you will find: </h2> 
 
--Home
--Computer Science Research
--Post Secondary Opportunities
--Slideshow
--Version 1 (Vi)
--Version 2 (Rougayyah)
--Version 3 (Vasiliki)
+-Home <br>
+-Computer Science Research <br>
+-Post Secondary Opportunities<br>
+-Slideshow<br>
+-Version 1 (Vi)<br>
+-Version 2 (Rougayyah)<br>
+-Version 3 (Vasiliki)<br>
 -References
 
-#[Wiki Page](https://github.com/ICS3Uvrv/CodingChallenge/wiki)
+<h2>[Wiki Page](https://github.com/ICS3Uvrv/CodingChallenge/wiki)</h2>
 
 
  
