@@ -11,7 +11,7 @@
 
 ## [Wiki Page](https://github.com/ICS3Uvrv/CodingChallenge/wiki)
 
- <CENTER> <img src="http://euruko.receipt-bank.com/assets/cover-image-2267e7361aa5bda03e8158b4d85cffe9051799b6b1a227d66ac758d2c876b0c7.png" width="800"><hr> </CENTER> 
+ <CENTER> <img src="https://www.elegantthemes.com/blog/wp-content/uploads/2017/07/programming-languages-to-learn-for-wordpress-featured-image.png" width="800"><hr> </CENTER> 
     
 
 
