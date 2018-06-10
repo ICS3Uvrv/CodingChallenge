@@ -30,12 +30,13 @@ void setup() {
 int count=0;
  
 void draw() {
- for(int i=0;i<steps;i++) {
+ for(int i=0;i<steps;i++) { //increment- will increase the value of integer by 1 
    count++;
-   boolean pix=get(x,y)!=-1; //white =-1
-   setBool(x,y,pix);
+   boolean pix=get(x,y)!=-1; //white =-1 //Reads the color of any pixel gets colour of single pixel. 
+	 
+   setBool(x,y,pix); //the x & y parameters specify the pixel to change and the c parameter specifies the color value. 
  
-   turn(pix);
+   turn(pix); 
    move();
  
    if(x<0||y<0||x>=width||y>=height) {
@@ -46,35 +47,49 @@ void draw() {
  }
 	//will print the number of steps to the console area. 
  if(count%1000==0) {
-   println("steps: "+count); // number of "repeating" (iteration) steps per frame
+	 
+	 //number of steps will print in top right corner of program with "text("Steps: " +count, 500, 120);"
+	 fill(0);
+	 textSize(18); 
+	 text("Steps: " +count, 500, 120);
+  println("Steps: "+count); // number of "repeating" (iteration) steps per frame
  }
 }
- 
+
 void move() {
  switch(direction) {
+		 //Denotes the different labels to be evaluated with the parameter in the switch structure.
+		
+		//when ant experiences a certain case, x or y variables can increase or decrease 
    case 0:
-     y--;
-     break;
+     y--; //Index for ant, Case 0 will mean that y decreases (y--)
+     break;// breaks will end the execution of a certain structure
+		 
    case 1:
-     x--;
-     break;
-   case 2:
-     y++;
-     break;
-   case 3:
-     x++;
+     x--; //x decreases x--
      break;
 		 
+   case 2:
+     y++; // y increases y++
+     break;
+		 
+   case 3:
+     x++; 
+     break;
+		 
+		 //x increases x++
 	 case 4:
-		 x++
+		 x++ 
 		 break; 
 		 
+		 //x decreases x--
 	 case 5:
 		 x-- 
 		 break; 
  }
 }
- 
+//If the program encounters a situation where the dir value does not fit into the set direction the value will instead be set to the highest or lowest value resetting the dir cycle
+
 void turn(boolean rightleft) {
  direction+=rightleft?1:-1;
  if(direction==-1) direction=3;
@@ -82,5 +97,6 @@ void turn(boolean rightleft) {
 }
  
 void setBool(int x, int y, boolean white) {
- set(x,y,white?#ffffff:#000000);
+	//colour
+ set(x,y,white?#ffffff:#000000); 
 }
