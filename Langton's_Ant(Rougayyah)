@@ -16,7 +16,7 @@ int direction;
  
 void setup() {
  // corridor after about 10000 cycles
- size(600, 600, P2D);
+ size(600, 600);
  
 	colorMode(HSB, 255, 255); 
  background(random(255), random(255), random(255));
