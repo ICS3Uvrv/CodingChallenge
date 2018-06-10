@@ -1,6 +1,5 @@
-# CodingChallenge
+#Langton's Ant
 
-<h2><strong> Langton's Ant </strong></h2>
+##  [Wiki Page](https://github.com/ICS3Uvrv/CodingChallenge/wiki)
 
-<strong>The wiki page can be found here: </strong> <br>
-https://github.com/ICS3Uvrv/CodingChallenge/wiki
+
