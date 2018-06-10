@@ -1,22 +1,22 @@
-/* we use the following conventions:
-* directions 0: up, 1: left, 2: down: 3: right
+//Langton's Ant (Rougayyah) 
+
+/* directions 0: up, 1: left, 2: down: 3: right
 * pixel white: true, black: false
 * turn right: true, left: false*/
  
-// number of "repeating" (iteration) steps per frame
-// set this to 1 to see a slow animation of each
-// step or to 10 or 100 for a faster animation
- 
-final int steps=100;
+/*Animation of steps.  
+If I set this to 1 the animation of the ant will be slow (for each step).
+If increase it (10 or 100), the animation will be faster. Ex. 100*/
+
+final int steps= 100; //adjust animation speed (1 -very slow, 10 -slow/medium, 100 -medium/fast, 1000 -fast)
  
 int x;
 int y;
 int direction;
  
 void setup() {
- // 100x100 is large enough to show the
  // corridor after about 10000 cycles
- size(100, 100, P2D);
+ size(600, 600, P2D);
  
 	colorMode(HSB, 255, 255); 
  background(random(255), random(255), random(255));
@@ -26,7 +26,7 @@ void setup() {
  
  direction=0;
 }
- 
+
 int count=0;
  
 void draw() {
@@ -39,14 +39,14 @@ void draw() {
    move();
  
    if(x<0||y<0||x>=width||y>=height) {
-     println("finished");
+     println("done");
      noLoop();
      break;
    }
  }
 	//will print the number of steps to the console area. 
  if(count%1000==0) {
-   println("iteration "+count);
+   println("steps: "+count); // number of "repeating" (iteration) steps per frame
  }
 }
  
@@ -64,6 +64,14 @@ void move() {
    case 3:
      x++;
      break;
+		 
+	 case 4:
+		 x++
+		 break; 
+		 
+	 case 5:
+		 x-- 
+		 break; 
  }
 }
  
