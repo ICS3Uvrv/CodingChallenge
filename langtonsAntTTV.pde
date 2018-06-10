@@ -10,24 +10,21 @@ class Ant {
   float colA = random(1, 254);
   float colB = random(1, 254);
   float colC = random(1, 254);
-
   Ant(int xTemp, int yTemp) {
     x = xTemp;
     y = yTemp;
   }
-
   void run() {
     color col = get(x, y);
-    if (col == color(250,250,c)) {
+    if (col == color(250, 250, c)) {
       decideC();
       stroke(colA, colB, colC);
       point(x, y);
     } else {
       decideW();
-      stroke(250,250,c);
+      stroke(250, 250, c);
       point(x, y);
     }
-
     //out of bounds
     if (x > width-1) {
       x = 0;
@@ -39,7 +36,6 @@ class Ant {
     } else if (y < 0) {
       y = height-1;
     }
-
     if (int(dir) == direct[0]) {
       y--;
     } else if (int(dir) == direct[1]) {
@@ -50,8 +46,6 @@ class Ant {
       x--;
     }
   }
-
-
   void decideW() {
     float q = random(100.0);
     if (q > 1) {
@@ -79,25 +73,22 @@ class Ant {
     }
   }
 }
-
 void setup() {
   ant = new Ant(int(random(width)), int(random(height)));
   ant1 = new Ant(int(random(width)), int(random(height)));
   ant2 = new Ant(int(random(width)), int(random(height)));
   ant3 = new Ant(int(random(width)), int(random(height)));
   ant4 = new Ant(int(random(width)), int(random(height)));
-  size(400, 400);
+  size(800, 600);
   direct[0] = 0;
   direct[1] = 1;
   direct[2] = 2;
   direct[3] = 3;
   dir = direct[int(random(3))];
-  background(250,250,c);
+  background(250, 250, c);
 }
-
 void draw() {
   if (pause == false) {
-
     ant.run();
     ant1.run();
     ant2.run();
